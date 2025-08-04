@@ -1,0 +1,330 @@
+/* Root & variables */
+:root {
+  --primary: #6c63ff;
+  --text-color: #111;
+  --bg: #f9f9f9;
+  --glass: rgba(255, 255, 255, 0.15);
+  --gradient: linear-gradient(135deg, #6c63ff, #8e44ec);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text-color);
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #eee;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.primary {
+  background: var(--gradient);
+  color: white;
+}
+
+.btn.primary:hover {
+  background: #5a50d1;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 90vh;
+}
+
+.hero-content {
+  flex: 1 1 400px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  max-width: 500px;
+  line-height: 1.4;
+}
+
+.hero-media video {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(108, 99, 255, 0.4);
+  object-fit: cover;
+}
+
+/* Glass effect */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+}
+
+/* Features */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: white;
+  padding: 28px 20px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: default;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 64px;
+  margin-bottom: 16px;
+}
+
+.card h3 {
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #444;
+}
+
+/* Pricing */
+.pricing-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  justify-content: center;
+}
+
+.pricing-card {
+  background: white;
+  padding: 32px 24px;
+  border-radius: 16px;
+  width: 280px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+}
+
+.pricing-card.highlight {
+  background: var(--gradient);
+  color: white;
+}
+
+.pricing-card ul {
+  padding-left: 20px;
+  margin: 20px 0;
+  list-style: disc;
+  align-self: flex-start;
+}
+
+.pricing-card ul li {
+  margin-bottom: 10px;
+}
+
+.pricing-card .price {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* Testimonials */
+.carousel {
+  position: relative;
+  height: 160px;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.testimonial {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  transition: opacity 0.7s ease;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.testimonial.active {
+  opacity: 1;
+  position: relative;
+}
+
+.testimonial p {
+  font-style: italic;
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+}
+
+.testimonial h4 {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* FAQ */
+.faq-item {
+  max-width: 700px;
+  margin: 0 auto 12px auto;
+}
+
+.faq-question {
+  width: 100%;
+  background: #fff;
+  border: none;
+  padding: 16px 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: background-color 0.25s ease;
+}
+
+.faq-question:hover {
+  background-color: #f0f0ff;
+}
+
+.faq-answer {
+  display: none;
+  padding: 12px 20px 20px 20px;
+  background: white;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Footer */
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 20px 15px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto 10px auto;
+  flex-wrap: wrap;
+}
+
+.footer-links a,
+.social a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.social img {
+  vertical-align: middle;
+  filter: drop-shadow(0 0 0.15rem black);
+}
+
+.footer-links a:hover,
+.social a:hover {
+  text-decoration: underline;
+}
+
+/* Glassmorphism background for hero */
+.hero.glass {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(108, 99, 255, 0.3);
+}
+
+/* Fade-in Animations */
+section, .card, .pricing-card, .faq-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-media video {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+  .pricing-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-top {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
